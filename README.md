@@ -1,7 +1,7 @@
 # HungamaAssignment
 
-MVVM (KOTLIN)
-ViewModel
-LiveData
-Navigation Component
-Room
+* MVVM (KOTLIN) 
+* ViewModel
+* LiveData
+* Navigation Component
+* Room
