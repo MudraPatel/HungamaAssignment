@@ -162,18 +162,28 @@ class SearchFragment : Fragment(), MyMovieRecyclerViewAdapter.ItemSelectedListen
         var r = movieData.size - 1
         while (l <= r) {
             //split the title into array
-            val resArr = movieData[l].title.split(" ").toTypedArray()
+            val resArr:List<String> = movieData[l].title.split(" ") as List<String>
+            val key = x.contains(" ")
+            Log.e("Result", "key :" + key)
 
             // iterate it splitArray
             for (i in resArr.indices) {
-                // check if split word is startwith same word or not
+                // check if split word is startwith same word or not using startwith function
                 //if yes then add in list and break the loop
-                if (resArr[i].startsWith(x, true)) {
-                    Log.d("Result", "BinarySearch3: "+movieData.size + "::"+listData.size);
-                    println(movieData[l].title + "YEs" + i + resArr[i])
-                    listData.add(movieData[l])
-                    break
+                //check search string contains space or not
+                if(key) {
+                        listData.add(movieData[l])
+                        break
+                    //}
+                }else {
+                    if (resArr[i].startsWith(x, true)) {
+                        Log.d("Result", "BinarySearch3: " + movieData.size + "::" + listData.size);
+                        println(movieData[l].title + "YEs" + i + resArr[i])
+                        listData.add(movieData[l])
+                        break
+                    }
                 }
+
             }
             l++
         }
