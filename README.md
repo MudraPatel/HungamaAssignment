@@ -9,8 +9,11 @@
 * Add dummy url to load the video in exoplayer
 * Search Function -
   1. First load the list using like operator then later iterate that list and split the title based on spaces
-  2. iterate SplitList and check if word startwith search key or not using string startwith function
-  3. if it start with search key then add in list
+  2. Iterate (Title List) SplitList 
+  3. Check if search String contains space or not - usings conatins operator
+  4. If yes then add into the list and apply break function otherwise same item will repeated (depends on title split array size )
+  5. Else: Title list (item) is startwith search key or not, using startwith function
+  6. if it start with search key then add in list
   
   * Recent Search - 
   1. User search the movie and click on it then it store in room db
