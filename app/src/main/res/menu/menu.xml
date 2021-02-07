@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <group android:checkableBehavior="single">
+    <item android:id="@+id/searchFragment"
+        android:title="Search"
+        android:icon="@drawable/ic_menu_search"
+        app:showAsAction="ifRoom|withText"/>
+    </group>
+</menu>

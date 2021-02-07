@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailsFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:nestedScrollingEnabled="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragment.MovieDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/exoplayerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/guideline">
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+        </com.google.android.exoplayer2.ui.PlayerView>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:paddingBottom="02dp"
+            android:text="@string/hello_blank_fragment"
+            android:textColor="@color/primary_color"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:paddingTop="02dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="02dp"
+            android:text="Release Date"
+            android:textColor="@color/secondary_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Language"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="14sp"
+            android:textColor="@color/secondary_color"
+            android:layout_marginBottom="05dp"
+            android:paddingBottom="05dp"/>
+
+        <TextView
+            android:id="@+id/tv_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Overview"
+            app:layout_constraintTop_toBottomOf="@id/tv_language"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_color"
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/tv_genre_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Overview"
+            app:layout_constraintTop_toBottomOf="@id/tv_genre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="12sp"
+            android:textColor="@color/secondary_color"
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="03dp"/>
+
+        <TextView
+            android:id="@+id/tv_cast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cast"
+            app:layout_constraintTop_toBottomOf="@id/tv_genre_details"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_color"
+            android:layout_marginBottom="10dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_cast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="LinearLayoutManager"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cast"
+            tools:context=".view.fragment.SearchFragment"
+            tools:listitem="@layout/cast_list" />
+
+        <TextView
+            android:id="@+id/tv_crew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crew"
+            app:layout_constraintTop_toBottomOf="@id/list_cast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_color"
+            android:layout_marginBottom="10dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_crew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="LinearLayoutManager"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            tools:context=".view.fragment.SearchFragment"
+            app:layout_constraintTop_toBottomOf="@id/tv_crew"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/tv_similar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Similar"
+            app:layout_constraintTop_toBottomOf="@id/list_crew"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/secondary_color"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp"
+           />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_similar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="LinearLayoutManager"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            tools:context=".view.fragment.SearchFragment"
+            app:layout_constraintTop_toBottomOf="@id/tv_similar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.30" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
